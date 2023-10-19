@@ -1,13 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home';
-<<<<<<< HEAD
-import Host from './Pages/Host1';
-=======
-import Host from './Pages/Host';
+
+import Host from './Pages/host1';
 import Book from './Pages/Book';
 import Events from './Pages/Events';
->>>>>>> 9c4e248c64dd9ec2ccfcdeaa346d0055b5724125
 
 
 function App() {
