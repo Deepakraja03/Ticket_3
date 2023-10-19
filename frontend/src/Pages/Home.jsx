@@ -1,3 +1,4 @@
+
 import Navbar from "../Components/Navbar";
 import Bg from "../assets/lp.png"
 
@@ -19,6 +20,7 @@ const Home = () => {
                     <button className="bg-white text-black mt-10 font-bold text-xl px-3 border-2 py-2 rounded-full hover:bg-black hover:border-2 hover:border-white hover:text-white">Book Now</button>
                     <button className="ml-16 text-xl border-2 px-3 py-2 rounded-full hover:text-black hover:bg-white ">Host Now </button>
                 </div>
+               
                 
             </main>
             
