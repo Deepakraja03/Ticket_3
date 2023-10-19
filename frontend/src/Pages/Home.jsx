@@ -10,7 +10,7 @@ const bg = {
 
 const Home = () => {
     return (
-        <div className="h-screen" style={bg}>
+        <div className="h-screen play-font" style={bg}>
           
            <Navbar />
             <main className="grid grid-cols-2">
