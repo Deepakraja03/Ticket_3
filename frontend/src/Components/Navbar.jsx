@@ -11,6 +11,10 @@ const Navbar = () => {
             <div className="flex justify-center text-white pt-2  pb-2  bg-white/30 rounded-full">
                 <div className="flex items-center ">
                 <h1 className="text-yellow-400 text-2xl font-bold">Ticket3</h1>
+
+                <a href="www.google.com" className="text-lg ml-7">Home</a>
+                <a href="/host" className="text-lg ml-7">Host</a>
+                <a href="www.google.com" className="text-lg ml-7 mr-7">Book</a>
                 <a href="www.google.com" className="text-lg ml-7 hover:underline">Home</a>
                 <a href="www.google.com" className="text-lg ml-7 hover:underline">Host</a>
                 <a href="www.google.com" className="text-lg ml-7 mr-7 hover:underline">Book</a>
