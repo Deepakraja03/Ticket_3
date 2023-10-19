@@ -15,6 +15,8 @@ const Navbar = () => {
                 <a href="/" className="text-lg ml-7">Home</a>
                 <a href="/host" className="text-lg ml-7">Host</a>
                 <a href="/book" className="text-lg ml-7 mr-7">Book</a>
+                <a href="/events" className="text-lg ml-7 mr-7">Events</a>
+
            
                 </div>
                 <button  className="text-xl text-black font-semibold border-2 border-yellow-400 bg-yellow-400  rounded-2xl px-3 py-1 hover:bg-black hover:border-2 hover:text-yellow-400 hover:border-yellow-400">
