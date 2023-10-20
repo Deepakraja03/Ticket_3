@@ -1,5 +1,6 @@
+import React  from "react";
 
-import { useState } from "react";
+import  { useState } from "react";
 import { HOSTEVENT } from "../ContractIntegration";
 
 const Host = () => {
@@ -35,23 +36,30 @@ const Host = () => {
   };
 
   return (
-    <div className="play bg-gray-800 h-screen flex flex-col px-60 py-11">
-      <input type="text" className="w-full my-3" placeholder="event name" name="name" value={host.name} onChange={handleChange} />
-      <input type="text" className="w-full my-3" placeholder="location" name="location" value={host.location} onChange={handleChange} />
-      <input type="number" className="w-full my-3" placeholder="total tickets" name="totaltickets" value={host.totaltickets} onChange={handleChange} />
-      <input type="number" className="w-full my-3" placeholder="price" name="price" value={host.price} onChange={handleChange} />
-      <input type="number" className="w-full my-3" placeholder="date" name="date" value={host.date} onChange={handleChange} />
-      <input type="number" className="w-full my-3" placeholder="time" name="time" value={host.time} onChange={handleChange} />
-      <button className="bg-red-500" onClick={addHost}>Host</button>
+    <div className="play-font bg-black h-screen  flex-col px-60 py-11  text-white font-medium">
+      <h1 className=" text-2xl md:text-3xl">Event Name
+      <input type="text" className=" block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-yellow-400 focus:outline-none focus:ring-0 focus:border-blue-600 peer placeholder-gray-500" placeholder="event name" required name="name" value={host.name} onChange={handleChange} /></h1>
+      <h1 className=" text-2xl md:text-3xl pt-6">Venue
+      <input type="text" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-yellow-400 focus:outline-none focus:ring-0 focus:border-blue-600 peer placeholder-gray-500" placeholder="location" name="location" value={host.location} onChange={handleChange} /></h1>
+      <h1 className="text-2xl md:text-3xl pt-6">Number of tickets
+      <input type="number" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-yellow-400 focus:outline-none focus:ring-0 focus:border-blue-600 peer placeholder-gray-500" placeholder="total tickets" name="totaltickets" value={host.totaltickets} onChange={handleChange} /></h1>
+      <h1 className=" text-2xl md:text-3xl pt-6"> Price per ticket
+      <input type="number" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-yellow-400 focus:outline-none focus:ring-0 focus:border-blue-600 peer placeholder-gray-500" placeholder="price" name="price" value={host.price} onChange={handleChange} /></h1>
+      <div className=" space-x-6 pt-6">
+          <h1 className=" text-2xl md:text-3xl ">Date 
+          <input type="number" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-yellow-400 focus:outline-none focus:ring-0 focus:border-blue-600 peer placeholder-gray-500" placeholder="date" name="date" value={host.date} onChange={handleChange} /></h1>
+          {/* <h1 className=" text-2xl md:text-3xl">Date to
+          <input type="number" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-yellow-400 focus:outline-none focus:ring-0 focus:border-blue-600 peer placeholder-gray-500" placeholder="date" name="date" value={host.date} onChange={handleChange} /></h1> */}
+      </div>
+      <h1 className=" text-2xl md:text-3xl pt-6 pb-6 ">Time
+      <input type="number" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-yellow-400 focus:outline-none focus:ring-0 focus:border-blue-600 peer placeholder-gray-500" placeholder="time" name="time" value={host.time} onChange={handleChange} /></h1>
+      <button className=" w-24 text-2xl rounded-full py-2 hover:scale-105 bg-yellow-300 text-black hover:bg-black border-2 hover:border-yellow-400 hover:text-white " onClick={addHost}>HOST</button>
       {transactionStatus && (
         <div className={transactionStatus === "Successfully submitted!" ? "text-green-500" : "text-red-500"}>
           {transactionStatus}
         </div>
       )}
-
-
-    </div>
-  );
-};
-
-export default Host;
+  </div>
+  )
+}
+  export default Host;
