@@ -12,7 +12,11 @@
     "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
+<<<<<<< HEAD
     "web3": "^1.9.0"
+=======
+    "web3": "^1.10.3"
+>>>>>>> 83c56ac74f1c33e74335127e4adbd0d5b991acb3
   },
   "scripts": {
     "start": "react-scripts start",

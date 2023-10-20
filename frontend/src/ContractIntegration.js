@@ -29,11 +29,30 @@ export const HOSTEVENT = async ({
         return tokenId;
     } catch (error) {
         console.error("Error hosting event:", error);
-        throw error; // Optionally rethrow the error for further handling
+        throw error;
+    }
+};
+export const GETALLEVENTS = async () => {
+    if (!ethereum) {
+        console.error("Ethereum provider not available.");
+        return;
+    }
+
+    const provider = new ethers.providers.Web3Provider(ethereum);
+    const signer = provider.getSigner();
+    const Role = new ethers.Contract(TICKET_CONTRACT, Tick, signer);
+    
+    try {
+        const result = await Role.getAllEvents();
+        return result;
+    } catch (error) {
+        console.error("Error fetching event:", error);
+        throw error;
     }
 };
 
 
+<<<<<<< HEAD
 export const FETCHHOSTEVENT = async () => {
     if (!ethereum) {
       return []; 
@@ -51,3 +70,5 @@ export const FETCHHOSTEVENT = async () => {
     }
   };
 
+=======
+>>>>>>> 83c56ac74f1c33e74335127e4adbd0d5b991acb3

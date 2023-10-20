@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 83c56ac74f1c33e74335127e4adbd0d5b991acb3
 import Bg from "../assets/lp.png"
 
 const bg = {
@@ -9,6 +14,8 @@ const bg = {
 const Home = () => {
     return (
         <div className="h-screen play-font" style={bg}>
+          
+        
             <main className="grid grid-cols-2">
                 <div className="text-white font-semibold  mt-36 ml-10"> 
                     <h1 className="text-7xl" >Ticket3: Crypto Tickets, Your Way</h1>
@@ -20,7 +27,7 @@ const Home = () => {
                     <button className="ml-16 text-xl border-2 px-3 py-2 rounded-full hover:text-yellow-400 hover:border-yellow-400 ">Host Now </button>
                     </a>
                 </div>
-            </main>
+            </main> 
             
         </div>
     );

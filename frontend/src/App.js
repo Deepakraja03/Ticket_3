@@ -9,12 +9,16 @@ import Web3 from 'web3';
 
 function App() {
   const [web3, setWeb3] = useState(null);
+
+
+
   const [isConnected, setIsConnected] = useState(
     localStorage.getItem('isConnected') === 'true' || false
   );
   const [walletAddress, setWalletAddress] = useState(
     localStorage.getItem('walletAddress') || ''
   );
+
 
   useEffect(() => {
     const getWeb3 = async () => {
@@ -24,6 +28,10 @@ function App() {
         if (window.ethereum.selectedAddress) {
           setIsConnected(true);
           setWalletAddress(window.ethereum.selectedAddress);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 83c56ac74f1c33e74335127e4adbd0d5b991acb3
           localStorage.setItem('walletAddress', window.ethereum.selectedAddress);
 
         }
@@ -32,6 +40,10 @@ function App() {
     getWeb3();
   }, []);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 83c56ac74f1c33e74335127e4adbd0d5b991acb3
   useEffect(() => {
     // When the component first loads, check if there's a wallet address in local storage
     const savedWalletAddress = localStorage.getItem('walletAddress');
@@ -41,6 +53,10 @@ function App() {
     }
   }, []);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 83c56ac74f1c33e74335127e4adbd0d5b991acb3
   const connectWallet = async () => {
     if (!web3) {
       console.error("Web3 is not initialized.");
@@ -52,6 +68,7 @@ function App() {
         setWalletAddress(window.ethereum.selectedAddress);
         localStorage.setItem('walletAddress', window.ethereum.selectedAddress);
         setIsConnected(true);
+
         localStorage.setItem('isConnected', 'true');
 
       }
@@ -66,6 +83,7 @@ function App() {
     localStorage.removeItem('walletAddress');
 
     localStorage.removeItem('isConnected');
+
   };
 
   return (
@@ -83,6 +101,10 @@ function App() {
   );
 }
 
+
 export default App;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 83c56ac74f1c33e74335127e4adbd0d5b991acb3
