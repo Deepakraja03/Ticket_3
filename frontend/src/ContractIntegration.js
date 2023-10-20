@@ -4,7 +4,8 @@ import { ethers } from "ethers";
 const isBrowser = () => typeof window !== "undefined";
 const ethereum = isBrowser() ? window.ethereum : null;
 
-const TICKET_CONTRACT = "0x9435060c40A5D2C3aA48F792dD81C74Bd5AF7Fe2";
+const TICKET_CONTRACT = "0x62631D2c3DA5c5FE2009818bed69bA42D5612E9D";
+
 
 export const HOSTEVENT = async ({
     name,
@@ -50,25 +51,3 @@ export const GETALLEVENTS = async () => {
         throw error;
     }
 };
-
-
-<<<<<<< HEAD
-export const FETCHHOSTEVENT = async () => {
-    if (!ethereum) {
-      return []; 
-    }
-  
-    const provider = new ethers.providers.Web3Provider(ethereum);
-    const signer = provider.getSigner();
-    const Role = new ethers.Contract(TICKET_CONTRACT, Tick, signer);
-  
-    try {
-      const events = await Role.getAllEvents(); // Replace 'getAllEvents' with the actual function in your contract
-      return events;
-    } catch (error) {
-      return []; // Return an empty array or handle the error as needed
-    }
-  };
-
-=======
->>>>>>> 83c56ac74f1c33e74335127e4adbd0d5b991acb3

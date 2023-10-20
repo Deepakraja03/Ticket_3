@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 83c56ac74f1c33e74335127e4adbd0d5b991acb3
 import Bg from "../assets/lp.png"
 
 const bg = {

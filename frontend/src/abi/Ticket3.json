@@ -511,5 +511,64 @@
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_eventId",
+				"type": "uint256"
+			}
+		],
+		"name": "viewEvent",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "host",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "eventName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "eventLocation",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalTickets",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "ticketsSold",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "ticketPrice",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "eventDate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "eventTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isActive",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
 ]
