@@ -1,4 +1,3 @@
-import Web3 from "web3";
 import Tick from "./abi/Ticket3.json";
 import { ethers } from "ethers";
 
@@ -35,32 +34,20 @@ export const HOSTEVENT = async ({
 };
 
 
-
-
-
-// export const AddTickent = async ({ 
-//   registerno,
-//   name,
-//   degree,
-//   dept,
-//   year,
-//   sem,
-// }) => {
-//   const provider =
-//     isBrowser()
-//       ? new ethers.providers.Web3Provider(window.ethereum)
-//       : ethers.providers.getDefaultProvider();
-//   const signer = provider.getSigner();
-//   const Role = new ethers.Contract(TICKET_COBTRACT, Tick, signer);
-//   const tokenId = await Role.addTickent(
-//     registerno,
-//     name,
-//     degree,
-//     dept,
-//     year,
-//     sem
-//   );
-//   console.log(tokenId);
-//   return tokenId;
-// };
+export const FETCHHOSTEVENT = async () => {
+    if (!ethereum) {
+      return []; 
+    }
+  
+    const provider = new ethers.providers.Web3Provider(ethereum);
+    const signer = provider.getSigner();
+    const Role = new ethers.Contract(TICKET_CONTRACT, Tick, signer);
+  
+    try {
+      const events = await Role.getAllEvents(); // Replace 'getAllEvents' with the actual function in your contract
+      return events;
+    } catch (error) {
+      return []; // Return an empty array or handle the error as needed
+    }
+  };
 

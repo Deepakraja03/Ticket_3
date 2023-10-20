@@ -1,28 +1,52 @@
-import img from "../assets/lp.png"
-const Cards = () => {
-    return ( 
-        <div className="mt-10 ml-10">
-            
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="www.google.com">
-        <img class="rounded-t-lg" src={img} alt="" />
-    </a>
-    <div class="p-5">
-        <a href="www.google.com">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="www.google.com" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
-</div>
+import React, { useState, useEffect } from "react";
+import Cards from "./Cards"; // Import your Cards component
+import { FETCHHOSTEVENT } from "../ContractIntegration"; // Import your HOSTEVENT function
 
+const ContractIntegration = () => {
+  const [hostedEvents, setHostedEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch hosted events when the component mounts
+  useEffect(() => {
+    async function fetchHostedEvents() {
+      try {
+        const events = await FETCHHOSTEVENT(); // Call your function to fetch hosted events
+        setHostedEvents(events);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    }
+
+    fetchHostedEvents();
+  }, []);
+
+  return (
+    <div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>Error: {error.message}</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-white">
+          {hostedEvents.map((event, index) => (
+            <Cards
+            key={index}
+            name={event.name}
+            ticket={event.ticket}
+            price={event.price}
+            location={event.location}
+            date={event.date}
+            time={event.time}
+              // Add other event properties as needed
+            />
+          ))}   
         </div>
-     );
-}
- 
-export default Cards;
+      )}
+    </div>
+  );
+};
+
+export default ContractIntegration;

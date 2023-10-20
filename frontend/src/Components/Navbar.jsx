@@ -27,10 +27,6 @@ const Navbar = ({ isConnected, connectWallet, disconnectWallet, walletAddress })
   };
 
   return (
-<<<<<<< HEAD
-    <div className='bg-black'>
-=======
->>>>>>> 752b33ef578f393224f628d0e41151d520e6d8ca
     <div className="py-2 px-20 bg-black w-full">
       <div className="flex justify-between text-white py-2 bg-white/30 rounded-full px-4">
         <div className="flex items-center">
@@ -82,10 +78,6 @@ const Navbar = ({ isConnected, connectWallet, disconnectWallet, walletAddress })
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-    </div>
-=======
->>>>>>> 752b33ef578f393224f628d0e41151d520e6d8ca
   );
 };
 

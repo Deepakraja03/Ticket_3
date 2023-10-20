@@ -1,8 +1,3 @@
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 752b33ef578f393224f628d0e41151d520e6d8ca
 import Bg from "../assets/lp.png"
 
 const bg = {
@@ -14,10 +9,6 @@ const bg = {
 const Home = () => {
     return (
         <div className="h-screen play-font" style={bg}>
-<<<<<<< HEAD
-          
-=======
->>>>>>> 752b33ef578f393224f628d0e41151d520e6d8ca
             <main className="grid grid-cols-2">
                 <div className="text-white font-semibold  mt-36 ml-10"> 
                     <h1 className="text-7xl" >Ticket3: Crypto Tickets, Your Way</h1>
