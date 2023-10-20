@@ -38,29 +38,3 @@ export const HOSTEVENT = async ({
 
 
 
-// export const AddTickent = async ({ 
-//   registerno,
-//   name,
-//   degree,
-//   dept,
-//   year,
-//   sem,
-// }) => {
-//   const provider =
-//     isBrowser()
-//       ? new ethers.providers.Web3Provider(window.ethereum)
-//       : ethers.providers.getDefaultProvider();
-//   const signer = provider.getSigner();
-//   const Role = new ethers.Contract(TICKET_COBTRACT, Tick, signer);
-//   const tokenId = await Role.addTickent(
-//     registerno,
-//     name,
-//     degree,
-//     dept,
-//     year,
-//     sem
-//   );
-//   console.log(tokenId);
-//   return tokenId;
-// };
-

@@ -1,5 +1,5 @@
 
-import Navbar from "../Components/Navbar";
+
 import Bg from "../assets/lp.png"
 
 const bg = {
@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div className="h-screen play-font" style={bg}>
           
-           <Navbar />
+        
             <main className="grid grid-cols-2">
                 <div className="text-white font-semibold  mt-36 ml-10">
                     <h1 className="text-7xl" >Ticket3: Crypto Tickets, Your Way</h1>
