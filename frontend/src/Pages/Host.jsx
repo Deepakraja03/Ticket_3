@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Web3 from "web3";
-import abi from "../Contract/ticket.json"; // Make sure to provide the correct path to your ABI JSON file
+import React from "react";
+import config from "../Contract/ticket.json";
+import  { useState } from "react";
+import Web3 from 'web3';
+import Navbar from "../Components/Navbar";
 
 const Host = () => {
   const [Description, setDescription] = useState("");
@@ -148,6 +150,7 @@ const Host = () => {
         </div>
       </form>
       {error}
+
     </div>
   );
 };
