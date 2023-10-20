@@ -113,6 +113,7 @@ const Host = () => {
             <button type="submit" class="text-black font-semibold  bg-yellow-400 hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 font-md rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-300 hover:scale-105 dark:focus:ring-black" onSubmit={handleSubmit}>Host</button>
         </div>
       </form>
+      {error}
     </div>
      );
 }
