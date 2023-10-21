@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import img from "../assets/lp.png";
 import { GETALLEVENTS } from "../ContractIntegration";
+import { Link } from "react-router-dom";
 
 const Events = () => {
     const [eventList, setEventList] = useState([]);
@@ -52,9 +53,11 @@ const Events = () => {
                                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">EventTimes<br />{parseInt(eventList[4][index])}</p>
                                         {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">IsActive<br />{eventList[5][index]}</p>
                                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">HostAddress<br />{eventList[6][index]}</p> */}
+                                        <Link to={`/event/:${parseInt(eventList[0][index], 16)}`} >
                                         <button className="bg-blue-700 px-4 py-1 rounded-2xl hover:bg-blue-800 text-sm font-medium">
                                             Book
                                         </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
