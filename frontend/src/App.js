@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import Host from './Pages/Host';
 import Events from './Pages/Events';
 import Dashboard from './Pages/Dashboard';
 import Navbar from './Components/Navbar';
-import Web3 from 'web3';
+
 import TicketBooking from '../src/Pages/TicketBooking';
 import EventDetails from './Pages/EventDetails';
 
@@ -17,7 +17,7 @@ import {
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import {avalancheFuji
 } from 'wagmi/chains';
-import { alchemyProvider } from 'wagmi/providers/alchemy';
+
 import { publicProvider } from 'wagmi/providers/public';
 
 function App() {
