@@ -1,14 +1,11 @@
+import Web3 from "web3";
 import Tick from "./abi/Ticket3.json";
 import { ethers } from "ethers";
 
 const isBrowser = () => typeof window !== "undefined";
 const ethereum = isBrowser() ? window.ethereum : null;
 
-const TICKET_CONTRACT = "0x62631D2c3DA5c5FE2009818bed69bA42D5612E9D";
-<<<<<<< HEAD
-
-=======
->>>>>>> f5d073ff0260df7ccd5da32eb5df0f432cfbe35d
+const TICKET_CONTRACT = "0xb2A300F896b5fBBD4F3Eca66eE06EDC03FF90982";
 
 export const HOSTEVENT = async ({
     name,
@@ -55,8 +52,6 @@ export const GETALLEVENTS = async () => {
         throw error;
     }
 };
-<<<<<<< HEAD
-=======
 
 export const VIEWONEEVENT = async(eventId) => {
     if (!ethereum) {
@@ -79,14 +74,29 @@ export const VIEWONEEVENT = async(eventId) => {
     }
 }
 
-export const BOOKING = async ({
-    name,
-    location,
-    totaltickets,
-    price,
-    date,
-    time
-}) => {
+export const BOOKING = async ({eventId, ticketCount, ticketCostStr}) => {
+    const provider =
+    window.ethereum != null
+      ? new ethers.providers.Web3Provider(window.ethereum)
+      : ethers.providers.getDefaultProvider();
+  const signer = provider.getSigner();
+      const contract = new ethers.Contract(
+        TICKET_CONTRACT ,
+        Tick,
+        signer
+      );
+  
+      // Call the payable function, sending the specified Ether value
+      const transactionResponse = await contract.bookTickets(eventId, ticketCount, {
+        value: ticketCostStr,
+      });
+  
+     
+      return transactionResponse;
+ 
+  };
+
+  export const GETUSERTICKETS = async () => {
     if (!ethereum) {
         console.error("Ethereum provider not available.");
         return;
@@ -97,12 +107,29 @@ export const BOOKING = async ({
     const Role = new ethers.Contract(TICKET_CONTRACT, Tick, signer);
     
     try {
-        const tokenId = await Role.hostEvent(name, location, totaltickets, price, date, time);
-        console.log("Transaction Hash:", tokenId);
-        return tokenId;
+        const result = await Role.getUserTickets();
+        return result;
     } catch (error) {
-        console.error("Error hosting event:", error);
+        console.error("Error fetching event:", error);
         throw error;
     }
 };
->>>>>>> f5d073ff0260df7ccd5da32eb5df0f432cfbe35d
+
+export const GETHOSTEVENTS = async () => {
+    if (!ethereum) {
+        console.error("Ethereum provider not available.");
+        return;
+    }
+
+    const provider = new ethers.providers.Web3Provider(ethereum);
+    const signer = provider.getSigner();
+    const Role = new ethers.Contract(TICKET_CONTRACT, Tick, signer);
+    
+    try {
+        const result = await Role.getHostedEvents();
+        return result;
+    } catch (error) {
+        console.error("Error fetching event:", error);
+        throw error;
+    }
+};
