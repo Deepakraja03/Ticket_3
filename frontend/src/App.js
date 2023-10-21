@@ -8,8 +8,6 @@ import Navbar from './Components/Navbar';
 import Web3 from 'web3';
 
 
-import Convert from '../src/Pages/Convert';
-
 function App() {
   const [web3, setWeb3] = useState(null);
 
@@ -80,8 +78,9 @@ function App() {
 
   };
 
+  
   return (
-    <div>
+    <div >
       <Router>
     
         <Navbar isConnected={isConnected} connectWallet={connectWallet} disconnectWallet={disconnectWallet} walletAddress={walletAddress} />
@@ -91,7 +90,7 @@ function App() {
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/events" element={<Events />} />
         
-          <Route path="/convert" element={<Convert />} />
+          
         </Routes>
       </Router>
     </div>
