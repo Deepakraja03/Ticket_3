@@ -9,6 +9,7 @@ import Navbar from './Components/Navbar';
 import Web3 from 'web3';
 
 
+
 function App() {
   const [web3, setWeb3] = useState(null);
 
@@ -91,6 +92,7 @@ function App() {
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/events" element={<Events />} />
           <Route path="/event/:id" element={<EventDetails />} />
+          
 
         </Routes>
       </Router>
