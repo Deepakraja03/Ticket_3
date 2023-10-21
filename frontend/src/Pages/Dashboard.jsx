@@ -1,3 +1,4 @@
+
 import { GETHOSTEVENTS, GETUSERTICKETS } from "../ContractIntegration";
 import React, { useState, useEffect } from "react";
 import Qrs from "./Qrs";
@@ -28,6 +29,10 @@ const Dashboard = () => {
         viewTickets();
         viewEvents();
     }, []);
+
+
+ 
+ const Dadhboard = () => {
 
     return ( 
         <div className="bg-black play-font">

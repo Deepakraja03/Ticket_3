@@ -20,6 +20,7 @@ import {avalancheFuji
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
+
 function App() {
   // const [web3, setWeb3] = useState(null);
   // const [isConnected, setIsConnected] = useState(false);
@@ -93,7 +94,9 @@ function App() {
   })
   
 
+  
   return (
+
     <div>
       <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider chains={chains}>
@@ -110,6 +113,21 @@ function App() {
           </Router>
         </RainbowKitProvider>
       </WagmiConfig>
+
+    <div >
+      <Router>
+    
+        <Navbar isConnected={isConnected} connectWallet={connectWallet} disconnectWallet={disconnectWallet} walletAddress={walletAddress} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/host" element={<Host />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/event/:id" element={<EventDetails />} />
+
+        </Routes>
+      </Router>
+
     </div>
   );
 }
