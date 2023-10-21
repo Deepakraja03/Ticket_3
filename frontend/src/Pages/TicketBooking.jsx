@@ -79,7 +79,6 @@ const EventDetails = () => {
     
                 const tokenId = await BOOKING({eventId, ticketCount, ticketCostStr});
                 console.log("Transaction Hash:", tokenId);
-                window.location.href= '/event/:id/booked';
                 setTransactionStatus("Successfully submitted!");
             } else {
                 console.error("Invalid event ID:", eventId);
@@ -97,34 +96,31 @@ const EventDetails = () => {
         <div className="bg-black play-font">
             <div>
                 <h1 className="text-4xl text-yellow-400 flex justify-center pt-5 font-bold">
-                    Ticket Booking
+                    Event Hosted
                 </h1>
             </div>
 
             <div className="text-white">
-                <h2 className="flex justify-center py-7">Event ID: {id}</h2>
+                <h2>Event ID: {id}</h2>
 
                 {event ? (
-                    <div className="flex justify-center">
-                        <div className="">
-                        <p className="py-3">Host: {event.host}</p>
-                        <p className="py-3">Event Name: {event.eventName}</p>
-                        <p className="py-3">Event Location: {event.eventLocation}</p>
-                        <p className="py-3">Total Tickets: {event.totalTickets}</p>
-                        <p className="py-3">Tickets Sold: {event.ticketsSold}</p>
-                        <p className="py-3">Ticket Price: {event.ticketPrice}</p>
-                        <p className="py-3">Event Date: {event.eventDate}</p>
-                        <p className="py-3">Active: {event.isActive ? "Yes" : "No"}</p>
-                        </div>
+                    <div className="block">
+                        <p>Host: {event.host}</p>
+                        <p>Event Name: {event.eventName}</p>
+                        <p>Event Location: {event.eventLocation}</p>
+                        <p>Total Tickets: {event.totalTickets}</p>
+                        <p>Tickets Sold: {event.ticketsSold}</p>
+                        <p>Ticket Price: {event.ticketPrice}</p>
+                        <p>Event Date: {event.eventDate}</p>
+                        <p>Active: {event.isActive ? "Yes" : "No"}</p>
                     </div>
                 ) : (
-                    <p className="flex justify-center py-10">Loading event details...</p>
+                    <p>Loading event details...</p>
                 )}
             </div>
 
-            <div className="flex justify-center">
+            <div>
                 <input
-                    className="py-3 rounded-2xl w-60 mr-52"
                     type="number"
                     placeholder="No of tickets"
                     name="ticketCount"
@@ -132,12 +128,10 @@ const EventDetails = () => {
                     value={book.ticketCount}
                     onChange={handleChange}
                 />
-            </div>
-                <div className="flex justify-center py-5 text-xl">
-                <button onClick={bookTicket} className="text-white rounded-xl px-2 py-1 bg-red-600">
+                <button onClick={bookTicket} className="text-white bg-red-600">
                     Book
                 </button>
-                </div>
+            </div>
         </div>
     );
 };

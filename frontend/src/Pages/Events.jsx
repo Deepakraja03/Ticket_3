@@ -55,7 +55,7 @@ const Events = () => {
                                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">HostAddress<br />{eventList[6][index]}</p> */}
                                         <Link to={`/event/:${parseInt(eventList[0][index], 16)}`} >
                                         <button className="bg-blue-700 px-4 py-1 rounded-2xl hover:bg-blue-800 text-sm font-medium">
-                                            Book
+                                            Book Tickets
                                         </button>
                                         </Link>
                                     </div>
@@ -64,7 +64,7 @@ const Events = () => {
                         ))}
                     </div>
                 ) : (
-                    <p>Loading events...</p>
+                    <p className="h-screen flex justify-center py-10">Loading events...</p>
                 )}
             </div>
             
