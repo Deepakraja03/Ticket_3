@@ -1,61 +1,5 @@
 [
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_eventId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_ticketCount",
-				"type": "uint256"
-			}
-		],
-		"name": "bookTickets",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_eventName",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_eventLocation",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_totalTickets",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_ticketPrice",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_eventDate",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_eventTime",
-				"type": "uint256"
-			}
-		],
-		"name": "hostEvent",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
@@ -86,10 +30,21 @@
 		"type": "event"
 	},
 	{
-		"inputs": [],
-		"name": "withdrawEarnings",
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_eventId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_ticketCount",
+				"type": "uint256"
+			}
+		],
+		"name": "bookTickets",
 		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -305,6 +260,31 @@
 	},
 	{
 		"inputs": [],
+		"name": "getHostWithdrawnTransactions",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct EventTicketing.Withdrawal[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "getHostedEvents",
 		"outputs": [
 			{
@@ -336,31 +316,6 @@
 				"internalType": "bool[]",
 				"name": "",
 				"type": "bool[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getHostWithdrawnTransactions",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "timestamp",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct EventTicketing.Withdrawal[]",
-				"name": "",
-				"type": "tuple[]"
 			}
 		],
 		"stateMutability": "view",
@@ -420,25 +375,39 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
+				"internalType": "string",
+				"name": "_eventName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_eventLocation",
+				"type": "string"
 			},
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "_totalTickets",
 				"type": "uint256"
-			}
-		],
-		"name": "hostedEvents",
-		"outputs": [
+			},
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "_ticketPrice",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_eventDate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_eventTime",
 				"type": "uint256"
 			}
 		],
-		"stateMutability": "view",
+		"name": "hostEvent",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -464,6 +433,30 @@
 			{
 				"internalType": "uint256",
 				"name": "timestamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "hostedEvents",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
 				"type": "uint256"
 			}
 		],
@@ -513,62 +506,10 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_eventId",
-				"type": "uint256"
-			}
-		],
-		"name": "viewEvent",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "host",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "eventName",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "eventLocation",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "totalTickets",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "ticketsSold",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "ticketPrice",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "eventDate",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "eventTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "isActive",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
+		"inputs": [],
+		"name": "withdrawEarnings",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]

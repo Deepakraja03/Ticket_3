@@ -5,20 +5,32 @@
   "dependencies": {
     "@certusone/wormhole-sdk": "^0.10.5",
     "@injectivelabs/sdk-ts": "^1.14.0-beta.1",
+    "@rainbow-me/rainbowkit": "^1.1.2",
     "@testing-library/jest-dom": "file:testing-library/react@testing-library/user-event@types/jest@types/node@types/react@types/react-dombabel-loaderts-loadertypescriptwebpackwebpack-cli",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@zxing/library": "^0.20.0",
     "ethers": "^5.7.2",
+    "form-data": "^4.0.0",
+    "fs": "^0.0.1-security",
+    "fs-js": "^1.0.6",
+    "html5-qrcode": "^2.3.8",
     "install": "^0.13.0",
+    "jsqr": "^1.4.0",
+    "node-fetch": "^2.6.1",
     "npm": "^10.2.1",
+    "qrcode.react": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-qr-reader": "^3.0.0-beta-1",
     "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
+    "react-weblineindia-qrcode-scanner": "^1.0.0",
+    "react-zxing": "^2.0.0",
+    "viem": "^1.16.6",
+    "wagmi": "^1.4.4",
     "web-vitals": "^2.1.4",
-    "web3": "^1.10.3"
+    "web3": "^1.10.3",
+    "zxing": "^0.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,5 +58,10 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.3.3"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "tailwind.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
